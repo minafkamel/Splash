@@ -1,26 +1,37 @@
+## Clue Android Assignment
+The purpose of this assignment is to get a sense of your technical skills and how you apply them.
 
-### Clue Android Assignment
-The purpose of this assignment is to evaluate your coding performance and to understand your working process.
+### Task
+The assignment is to develop an image fetching application using the UnSplash API. This application should enable the users to add a random image to a list, that is persisted across sessions.
 
-#### Task
-We want you to design,
-- An App using a random image UnSplash API (included in the project).
-- On click of a button, it should fetch a new image and append in the list.
-- The data should persist across sessions.
+#### API documentation
+The UnSplash API requires a key. It can be obtained through this [url](https://unsplash.com/documentation#creating-a-developer-account) by creating a developer account.
 
-Don't worry too much about how the list will looks for now. Feel free to adjust
-the layout as you see fit.
+The full documentation of the API can be found [here](https://unsplash.com/documentation).
+The random image endpoint documentation can also be found [here](https://unsplash.com/documentation#get-a-random-photo)
 
+#### Requirements
 
-#### Implementation Details.
-Use the API, `photos/random/` from the Unsplash API that will let you fetch a random photo.
+- On first start, the user sees a single image in a list coming from the API.
+- When the user clicks a button, a new random image from the API is appended to the list.
+- When the user taps on an image, the image details (description, location, number of likes etc.) are displayed (It's up to you to decide how, where and how many of these details you want to show).
+- When the app is reopened, the list from the previous session is displayed.
+
+#### Sample Screen
+Feel free to come up with the best UI that fulfills the requirements, you can use the image below as inspiration.
 
 ![Image](img/assignment.png)
 
 #### Expectations
-- A consistent and well defined app architecture.
-It does NOT need to be a specific architecture but it needs to be applied consistently.
+
+- All the functional requirements are met by the application.
+- A consistent and well defined app architecture is used, with a clear separation of concerns.
 - Production level code.
-No commented out code, no crashes, broken UI, etc.
-- Written in Kotlin
-- Provide a README describing architectural decisions you made, any libraries used, and anything else you would like to highlight as a part of your solution.
+- Written in Kotlin.
+- [Optional] Provide a README with anything you would like to highlight as a part of your solution.
+
+This repository is providing a base implementation, but don’t feel obligated to follow it, if it doesn’t align with your solution. Feel free to use any library or pattern you think is suitable for the project.
+
+Feel free to send us emails if you have any question.
+
+We look forward to seeing what you come up with, have fun!
