@@ -5,7 +5,7 @@ The purpose of this assignment is to get a sense of your technical skills and ho
 The assignment is to develop an image fetching application using the UnSplash API. This application should enable the users to add a random image to a list, that is persisted across sessions.
 
 #### Submission
-Once you arrive to a solution that you're comfortable with, please create a pull request to main in this repository.
+Once you arrive to a solution that you're comfortable with, please send the zip file with your project via email.
 
 #### API documentation
 The UnSplash API requires a key. It can be obtained through this [url](https://unsplash.com/documentation#creating-a-developer-account) by creating a developer account.
