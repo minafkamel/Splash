@@ -26,15 +26,18 @@ Feel free to come up with the best UI that fulfills the requirements, you can us
 ![Image](img/assignment.png)
 
 #### Expectations
-The most important expectation is that the app compiles, runs successfully, and meets all functional requirements. Beyond that, we want to evaluate your approach to developing a robust and maintainable application.
-How you choose to showcase your abilities is up to you. Consider including some of the following, but it’s not required to implement everything:
+The most critical **baseline expectation** is that the app written in Kotlin, compiles, runs, and meets the all functional requirements. 
 
-- **Architecture & Code Quality:** Follow a well-structured architecture with a clear separation of concerns (e.g., MVVM, Clean Architecture) to demonstrate maintainability.
-- **Code Readability & Maintainability:** Write clean, modular, and readable code.
-- **Testing:** Adding a few unit or UI tests could highlight how you approach testing.
-- **Persistence:** Storing and retrieving the image list across sessions using Room, SharedPreferences, or DataStore is one possible approach.
-- **Error Handling:** Demonstrating how you handle API failures or network issues could add robustness.
-- **Documentation:** A short README explaining your approach, architecture, and any other relevant details would be beneficial.
+Beyond that, we want to evaluate your approach to developing a robust and maintainable application.
+How you choose to showcase your abilities is up to you. Consider the following aspects that usually rank higher in our review, but it’s not required to implement everything:
+
+- **Architecture & Code Structure:** **MVVM (Model-View-ViewModel)** and multi-module architecture is preferred. However, **clean separation of concerns** is more important. 
+- **Use of Modern Android Practices:** Usage of **Jetpack Compose**, **Hilt**, **StateFlow** is nice to be showcased.
+- **Testing Coverage:** Adding a few **unit or UI tests** could highlight how you approach testing.
+- **Error Handling:** Demonstrating how you handle variety of **possible failures** would be important.
+- **Security:** Considering major security issues will lead to positive remarks. 
+- **Documentation:** A **well-written README** explaining architecture decisions and trade-offs will be consistently praised.
+- **Scalability & Maintainability Considerations:** A balance between **clean code and simplicity** is appreciated over unnecessary complexity.
 
 This assignment serves as a foundation for the follow-up in-depth interview. Use this opportunity to highlight your strengths, whether through architectural decisions, performance optimizations, innovative solutions, or additional features that enhance the user experience.
 
