@@ -1,5 +1,5 @@
 ## Clue Android Assignment
-The purpose of this assignment is to get a sense of your technical skills and how you apply them.
+The purpose of this assignment is to evaluate your technical skills, coding practices, and how you apply them in an Android project. The most critical aspect is that your solution compiles, runs, and meets all the functional requirements outlined below. Beyond that, we want to see how you structure your code, showcase your versatility, and demonstrate your ability to write clean, maintainable software.
 
 ### Task
 The assignment is to develop an image fetching application using the UnSplash API. This application should enable the users to add a random image to a list, that is persisted across sessions.
@@ -26,12 +26,17 @@ Feel free to come up with the best UI that fulfills the requirements, you can us
 ![Image](img/assignment.png)
 
 #### Expectations
+The most important expectation is that the app compiles, runs successfully, and meets all functional requirements. Beyond that, we want to evaluate your approach to developing a robust and maintainable application.
+How you choose to showcase your abilities is up to you. Consider including some of the following, but it’s not required to implement everything:
 
-- All the functional requirements are met by the application.
-- A consistent and well defined app architecture is used, with a clear separation of concerns.
-- Production level code.
-- Written in Kotlin.
-- [Optional] Provide a README with anything you would like to highlight as a part of your solution.
+- **Architecture & Code Quality:** Follow a well-structured architecture with a clear separation of concerns (e.g., MVVM, Clean Architecture) to demonstrate maintainability.
+- **Code Readability & Maintainability:** Write clean, modular, and readable code.
+- **Testing:** Adding a few unit or UI tests could highlight how you approach testing.
+- **Persistence:** Storing and retrieving the image list across sessions using Room, SharedPreferences, or DataStore is one possible approach.
+- **Error Handling:** Demonstrating how you handle API failures or network issues could add robustness.
+- **Documentation:** A short README explaining your approach, architecture, and any other relevant details would be beneficial.
+
+This assignment serves as a foundation for the follow-up in-depth interview. Use this opportunity to highlight your strengths, whether through architectural decisions, performance optimizations, innovative solutions, or additional features that enhance the user experience.
 
 This repository is providing a base implementation, but don’t feel obligated to follow it, if it doesn’t align with your solution. Feel free to use any library or pattern you think is suitable for the project.
 
