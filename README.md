@@ -36,7 +36,7 @@ How you choose to showcase your abilities is up to you. Consider the following a
 - **Testing Coverage:** Adding a few **unit or UI tests** could highlight how you approach testing.
 - **Error Handling:** Demonstrating how you handle variety of **possible failures** would be important.
 - **Security:** Considering major security issues will lead to positive remarks. 
-- **Documentation:** A **well-written README** explaining architecture decisions and trade-offs will be consistently praised.
+- **Documentation:** A **well-written README** explaining architecture decisions and trade-offs will be valued.
 - **Scalability & Maintainability Considerations:** A balance between **clean code and simplicity** is appreciated over unnecessary complexity.
 
 This assignment serves as a foundation for the follow-up in-depth interview. Use this opportunity to highlight your strengths, whether through architectural decisions, performance optimizations, innovative solutions, or additional features that enhance the user experience.
