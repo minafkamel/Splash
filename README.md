@@ -29,17 +29,17 @@ Feel free to come up with the best UI that fulfills the requirements, you can us
 The most critical **baseline expectation** is that the app written in Kotlin, compiles, runs, and meets the all functional requirements. 
 
 Beyond that, we want to evaluate your approach to developing a robust and maintainable application.
-How you choose to showcase your abilities is up to you. Consider the following aspects that usually rank higher in our review, but it’s not required to implement everything:
+How you choose to showcase your abilities is up to you. Consider the following aspects that usually rank higher in our review, but implementing everything is **not required**:
 
-- **Architecture & Code Structure:** **MVVM (Model-View-ViewModel)** and multi-module architecture is preferred. However, **clean separation of concerns** is more important. 
-- **Use of Modern Android Practices:** Usage of **Jetpack Compose**, **Hilt**, **StateFlow** is nice to be showcased.
-- **Testing Coverage:** Adding a few **unit or UI tests** could highlight how you approach testing.
-- **Error Handling:** Demonstrating how you handle variety of **possible failures** would be important.
-- **Security:** Considering major security issues will lead to positive remarks. 
-- **Documentation:** A **well-written README** explaining architecture decisions and trade-offs will be valued.
+- **Architecture & Code Structure:** **MVVM (Model-View-ViewModel)** and multi-module architecture are preferred, but **clean separation of concerns** is more important. 
+- **Use of Modern Android Practices:** Usage of **Jetpack Compose**, **Dependency Injection**, and **Kotlin flows** would be good to showcase.
+- **Testing Coverage:** Adding a few **unit or UI tests** could highlight your approach to ensuring reliability.
+- **Error Handling:** Demonstrating how you handle variety of **possible failures** would be beneficial.
+- **Security:** Addressing major security risks will be viewed positively. 
+- **Documentation:** A **well-written README** explaining architecture decisions, trade-offs and areas for improvement will be highly valued.
 - **Scalability & Maintainability Considerations:** A balance between **clean code and simplicity** is appreciated over unnecessary complexity.
 
-This assignment serves as a foundation for the follow-up in-depth interview. Use this opportunity to highlight your strengths, whether through architectural decisions, performance optimizations, innovative solutions, or additional features that enhance the user experience.
+This assignment serves as a foundation for the follow-up in-depth interview. Use this opportunity to highlight your strengths, whether through architectural decisions, performance optimizations, innovative solutions, or additional features that enhance the user experience. However, you don’t need to implement everything. If time is limited, feel free to skip certain implementations and instead provide a mock, abstraction, or in-code comment explaining how it should be implemented. As long as this doesn’t affect functional requirements, it will still be considered positively.
 
 This repository is providing a base implementation, but don’t feel obligated to follow it, if it doesn’t align with your solution. Feel free to use any library or pattern you think is suitable for the project.
 
