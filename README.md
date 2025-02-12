@@ -1,5 +1,5 @@
 ## Clue Android Assignment
-The purpose of this assignment is to get a sense of your technical skills and how you apply them.
+The purpose of this assignment is to evaluate your technical skills, coding practices, and how you apply them in an Android project. The most critical aspect is that your solution compiles, runs, and meets all the functional requirements outlined below. Beyond that, we want to see how you structure your code, showcase your versatility, and demonstrate your ability to write clean, maintainable software.
 
 ### Task
 The assignment is to develop an image fetching application using the UnSplash API. This application should enable the users to add a random image to a list, that is persisted across sessions.
@@ -26,12 +26,20 @@ Feel free to come up with the best UI that fulfills the requirements, you can us
 ![Image](img/assignment.png)
 
 #### Expectations
+The most critical **baseline expectation** is that the app written in Kotlin, compiles, runs, and meets the all functional requirements. 
 
-- All the functional requirements are met by the application.
-- A consistent and well defined app architecture is used, with a clear separation of concerns.
-- Production level code.
-- Written in Kotlin.
-- [Optional] Provide a README with anything you would like to highlight as a part of your solution.
+Beyond that, we want to evaluate your approach to developing a robust and maintainable application.
+How you choose to showcase your abilities is up to you. Consider the following aspects that usually rank higher in our review, but implementing everything is **not required**:
+
+- **Architecture & Code Structure:** **MVVM (Model-View-ViewModel)** and multi-module architecture are preferred, but **clean separation of concerns** is more important. 
+- **Use of Modern Android Practices:** Usage of **Jetpack Compose**, **Dependency Injection**, and **Kotlin flows** would be good to showcase.
+- **Testing Coverage:** Adding a few **unit or UI tests** could highlight your approach to ensuring reliability.
+- **Error Handling:** Demonstrating how you handle variety of **possible failures** would be beneficial.
+- **Security:** Addressing major security risks will be viewed positively. 
+- **Documentation:** A **well-written README** explaining architecture decisions, trade-offs and areas for improvement will be highly valued.
+- **Scalability & Maintainability Considerations:** A balance between **clean code and simplicity** is appreciated over unnecessary complexity.
+
+This assignment serves as a foundation for the follow-up in-depth interview. Use this opportunity to highlight your strengths, whether through architectural decisions, performance optimizations, innovative solutions, or additional features that enhance the user experience. However, you don’t need to implement everything. If time is limited, feel free to skip certain implementations and instead provide a mock, abstraction, or in-code comment explaining how it should be implemented. As long as this doesn’t affect functional requirements, it will still be considered positively.
 
 This repository is providing a base implementation, but don’t feel obligated to follow it, if it doesn’t align with your solution. Feel free to use any library or pattern you think is suitable for the project.
 
