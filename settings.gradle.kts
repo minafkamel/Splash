@@ -25,3 +25,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Clue-Android-Assignment"
 include(":app")
+include(":photolist")

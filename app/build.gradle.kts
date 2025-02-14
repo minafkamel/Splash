@@ -69,11 +69,6 @@ dependencies {
     // Coroutines
     implementation(libs.kotlinx.coroutines.android)
 
-    // Retrofit
-    implementation(libs.retrofit)
-    implementation(libs.retrofit.converter)
-    implementation(libs.logging.interceptor)
-
     // Dagger
     implementation(libs.dagger.hilt)
     kapt(libs.dagger.hilt.compiler)
@@ -88,4 +83,6 @@ dependencies {
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.mockito.kotlin)
     testImplementation(libs.turbine)
+
+
 }

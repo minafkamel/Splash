@@ -1,6 +1,5 @@
-package com.helloclue.androidassignment.data
+package com.helloclue.androidassignment.photolist.data
 
-import com.helloclue.androidassignment.model.Photo
 import retrofit2.Response
 import retrofit2.http.GET
 

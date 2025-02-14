@@ -1,4 +1,4 @@
-package com.helloclue.androidassignment.model
+package com.helloclue.androidassignment.photolist.data
 
 import com.google.gson.annotations.SerializedName
 
