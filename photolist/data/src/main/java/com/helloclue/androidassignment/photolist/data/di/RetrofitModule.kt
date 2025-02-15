@@ -1,5 +1,10 @@
-package com.helloclue.androidassignment.photolist.data
+package com.helloclue.androidassignment.photolist.data.di
 
+import PhotoDeserializer
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
+import com.helloclue.androidassignment.photolist.data.Photo
+import com.helloclue.androidassignment.photolist.data.RemoteDataSource
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,19 +24,10 @@ object RetrofitModule {
 
     @Provides
     @Singleton
-    fun provideRetrofit(baseUrl: String): Retrofit {
-        val okHttpClient = OkHttpClient.Builder().apply {
-
-            addInterceptor(
-                HttpLoggingInterceptor().apply {
-                    HttpLoggingInterceptor.Level.BODY
-                }
-            )
-        }.build()
-
+    fun provideRetrofit(baseUrl: String, okHttpClient: OkHttpClient, gson: Gson): Retrofit {
         return Retrofit.Builder()
             .baseUrl(baseUrl)
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create(gson))
             .client(okHttpClient)
             .build()
     }
@@ -39,15 +35,23 @@ object RetrofitModule {
     @Provides
     @Singleton
     fun provideClient(): OkHttpClient = OkHttpClient.Builder().apply {
-
         addInterceptor(
             HttpLoggingInterceptor().apply {
                 HttpLoggingInterceptor.Level.BODY
             }
         )
+        addInterceptor(ClientIdInterceptor)
     }.build()
+
 
     @Provides
     @Singleton
-    fun provideApi(retrofit: Retrofit): RemoteDataSource = retrofit.create(RemoteDataSource::class.java)
+    fun providesGsonAdapter() = GsonBuilder()
+        .registerTypeAdapter(Photo::class.java,  PhotoDeserializer())  // Register the custom deserializer
+        .create();
+
+    @Provides
+    @Singleton
+    fun provideApi(retrofit: Retrofit): RemoteDataSource =
+        retrofit.create(RemoteDataSource::class.java)
 }
