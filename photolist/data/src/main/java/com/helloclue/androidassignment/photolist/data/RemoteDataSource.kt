@@ -7,7 +7,7 @@ interface RemoteDataSource {
 
     // Load the Auth token from https://unsplash.com/documentation
     @GET(ENDPOINT)
-    suspend fun getPhotos(): Response<Photo>
+    suspend fun getPhoto(): Response<Photo>
 
 
     companion object {
