@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.helloclue.androidassignment.photolist"
+    namespace = "com.helloclue.androidassignment.photolist.data"
     compileSdk = 34
 
     defaultConfig {
@@ -37,4 +37,8 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
 
+    // Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.converter)
+    implementation(libs.logging.interceptor)
 }
