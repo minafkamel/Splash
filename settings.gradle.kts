@@ -27,3 +27,5 @@ rootProject.name = "Clue-Android-Assignment"
 include(":app")
 include(":photolist")
 include(":photolist:data")
+include(":photolist:domain")
+include(":photolist:presentation")
