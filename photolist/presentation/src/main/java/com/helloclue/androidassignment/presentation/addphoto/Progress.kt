@@ -1,0 +1,27 @@
+package com.helloclue.androidassignment.presentation.addphoto
+
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.helloclue.androidassignment.presentation.PhotosViewModel
+import com.helloclue.androidassignment.presentation.UiState
+
+
+@Composable
+fun Progress(photosViewModel: PhotosViewModel = viewModel()) {
+    val uiState = photosViewModel.addPhotoUiState.collectAsState()
+
+    if (uiState.value is UiState.Loading) {
+        Box(
+            modifier = Modifier.fillMaxSize(),
+            contentAlignment = Alignment.Center
+        ) {
+            CircularProgressIndicator()
+        }
+    }
+}
