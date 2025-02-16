@@ -84,5 +84,5 @@ dependencies {
     testImplementation(libs.mockito.kotlin)
     testImplementation(libs.turbine)
 
-
+    implementation(project(":photolist:presentation"))
 }
