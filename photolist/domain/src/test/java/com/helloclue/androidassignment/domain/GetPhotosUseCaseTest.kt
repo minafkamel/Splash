@@ -43,6 +43,22 @@ class GetPhotosUseCaseTest {
         assertEquals(expectedUrls, (resource as Resource.Success).data)
     }
 
+    @Test
+    fun `emits Resource Error with an url is null`(): Unit = runTest {
+        // Arrange
+        val photos = listOf(defaultPhoto.copy(urlRegular = null))
+
+        val expectedUrls = photos.map { it.urlRegular }
+
+        whenever(repository.photosFlow).thenReturn(flowOf(photos))
+
+        // Act
+        val resource = sut.invoke().first()
+
+        // Assert
+        assertTrue(resource is Resource.Error)
+    }
+
     val defaultPhoto = Photo(
         id = "dummyId",
         urlRegular = "dummyUrl",
