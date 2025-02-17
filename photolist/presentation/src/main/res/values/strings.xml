@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="details">Details</string>
+    <string name="likes">%s likes</string>
+    <string name="location">Location: %s</string>
+    <string name="unknown">Unknown\n</string>
+</resources>

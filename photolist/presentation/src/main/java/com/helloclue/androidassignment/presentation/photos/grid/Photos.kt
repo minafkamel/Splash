@@ -28,11 +28,11 @@ import com.helloclue.androidassignment.presentation.photos.PhotosViewModel
 @Composable
 fun Photos(photosViewModel: PhotosViewModel = viewModel()) {
     val loadStoredUrlsState = photosViewModel.loadStoredUrlsUiState.collectAsState()
-    var showDialog = remember { mutableStateOf(false) }
+    val clickedId = remember { mutableStateOf("") }
 
     Progress()
     Error()
-    Dialog(showDialog)
+    Dialog(clickedId)
 
     if (loadStoredUrlsState.value is UiState.Success) {
         val photos = (loadStoredUrlsState.value as UiState.Success).data
@@ -60,7 +60,9 @@ fun Photos(photosViewModel: PhotosViewModel = viewModel()) {
                             contentDescription = null,
                             modifier = Modifier
                                 .fillMaxSize()
-                                .clickable { showDialog.value = true },
+                                .clickable {
+                                    clickedId.value = photos[index].photoId
+                                },
                             contentScale = ContentScale.Crop
                         )
                     }
