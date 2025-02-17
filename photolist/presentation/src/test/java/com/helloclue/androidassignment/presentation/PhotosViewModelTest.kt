@@ -1,9 +1,9 @@
 package com.helloclue.androidassignment.presentation
 
 import app.cash.turbine.test
-import com.helloclue.androidassignment.domain.AddRandomPhotoUseCase
-import com.helloclue.androidassignment.domain.GetPhotosUseCase
-import com.helloclue.androidassignment.domain.GetPhotosUseCase.PhotoInfo
+import com.helloclue.androidassignment.domain.photos.AddRandomPhotoUseCase
+import com.helloclue.androidassignment.domain.photos.GetPhotosUseCase
+import com.helloclue.androidassignment.domain.photos.GetPhotosUseCase.PhotoInfo
 import com.helloclue.androidassignment.domain.Resource
 import com.helloclue.androidassignment.presentation.photos.PhotosViewModel
 import com.helloclue.androidassignment.presentation.photos.grid.PhotoUi

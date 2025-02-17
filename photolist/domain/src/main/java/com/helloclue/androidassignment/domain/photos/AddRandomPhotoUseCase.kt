@@ -1,5 +1,6 @@
-package com.helloclue.androidassignment.domain
+package com.helloclue.androidassignment.domain.photos
 
+import com.helloclue.androidassignment.domain.Resource
 import com.helloclue.androidassignment.photolist.data.Repository
 import javax.inject.Inject
 

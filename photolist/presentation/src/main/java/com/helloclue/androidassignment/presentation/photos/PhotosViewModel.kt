@@ -2,8 +2,8 @@ package com.helloclue.androidassignment.presentation.photos
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.helloclue.androidassignment.domain.AddRandomPhotoUseCase
-import com.helloclue.androidassignment.domain.GetPhotosUseCase
+import com.helloclue.androidassignment.domain.photos.AddRandomPhotoUseCase
+import com.helloclue.androidassignment.domain.photos.GetPhotosUseCase
 import com.helloclue.androidassignment.domain.Resource
 import com.helloclue.androidassignment.presentation.UiState
 import com.helloclue.androidassignment.presentation.photos.grid.PhotoUi

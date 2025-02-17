@@ -1,6 +1,7 @@
 package com.helloclue.androidassignment.domain
 
-import com.helloclue.androidassignment.domain.GetPhotosUseCase.PhotoInfo
+import com.helloclue.androidassignment.domain.photos.GetPhotosUseCase
+import com.helloclue.androidassignment.domain.photos.GetPhotosUseCase.PhotoInfo
 import com.helloclue.androidassignment.photolist.data.Photo
 import com.helloclue.androidassignment.photolist.data.Repository
 import kotlinx.coroutines.flow.first

@@ -1,6 +1,6 @@
 package com.helloclue.androidassignment.presentation.photos.grid
 
-import com.helloclue.androidassignment.domain.GetPhotosUseCase.PhotoInfo
+import com.helloclue.androidassignment.domain.photos.GetPhotosUseCase.PhotoInfo
 
 data class PhotoUi(val photoId: String, val imageUrl: String)
 
