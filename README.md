@@ -162,6 +162,14 @@ In the repository, `getRandomPhoto()` does two things:
  - Calls`remoteDataSource.getPhoto()` to retrieve a `Photo` from the BE.
 - Adds the photo to a Room Database via `localDataSource.add(photo)`
 
+```mermaid
+graph LR
+A[Add Photos] --> B[photosViewModel.addPhotoClicked] --> C[addRandomPhotoUseCase] --> D[repository.getRandomPhoto] --> E[remoteDataSource.getPhoto] 
+
+E[remoteDataSource.getPhoto] --> D[repository.getRandomPhoto] 
+D[repository.getRandomPhoto] --> F[localDataSource.add] 
+```
+
 
 ## Functionality 2: Display of photos
 
@@ -176,6 +184,12 @@ The `GetPhotosUseCase` makes use of the `repository.photosFlow` exposed by the d
 
 ### Data
 `repository.photosFlow` is a hot flow that exposes a flow from the database via `localDataSource.getAllPhotos()`. Whenever a new photo is added, the flow will emit it and anyone subscribed to it can collect the value. This is how the UI is updated here.
+
+Notice the direction of data:
+```mermaid
+graph RL
+A[localDataSource.getAllPhotos] --> B[repository.photosFlow] --> C[getPhotosUseCase] --> D[Photos displayed in LazyVerticalGrid] 
+```
 
 ## Functionality 3: Details
 
@@ -192,3 +206,9 @@ The `GetDetailsUseCase` gets the details of the photo given an `id`. It calls `r
 ### Data
 In the `Repository`, the method `getPhotoById` calls `localDataSource.getPhotoById(id)` which queries the database and gets the info.
 
+```mermaid 
+graph LR
+A[Photo Clicked] --> B[Dialog] --> C[getDetailsUseCase] --> D[repository.getPhotoById] 
+--> E[localDataSource.getPhotoById]
+
+```
