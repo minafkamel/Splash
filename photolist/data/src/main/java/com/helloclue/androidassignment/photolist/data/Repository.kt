@@ -20,6 +20,8 @@ class Repository @Inject constructor(
         }
     }
 
+    fun getPhotoById(id: String) = localDataSource.getPhotoById(id)
+
     val photosFlow = localDataSource.getAllPhotos()
 }
 
