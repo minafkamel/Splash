@@ -8,7 +8,7 @@ plugins {
 
 android {
     namespace = "com.helloclue.androidassignment"
-    compileSdk = 35
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.helloclue.androidassignment"
@@ -71,18 +71,21 @@ dependencies {
 
     // Dagger
     implementation(libs.dagger.hilt)
+    implementation(libs.androidx.ui.test.junit4.android)
     kapt(libs.dagger.hilt.compiler)
 
     // Tests
     testImplementation(libs.junit)
-    testImplementation(libs.androidx.ui.test.junit4)
-    androidTestImplementation(libs.androidx.ui.test)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     testImplementation(libs.mockito.core)
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.mockito.kotlin)
     testImplementation(libs.turbine)
+
+    //UI Tests
+    androidTestImplementation(libs.androidx.ui.test)
+    androidTestImplementation(libs.androidx.ui.test.junit4)
 
     implementation(project(":photolist:presentation"))
 }
