@@ -1,4 +1,4 @@
-package com.helloclue.androidassignment.presentation.grid
+package com.helloclue.androidassignment.presentation.photos.grid
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -18,8 +18,8 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
-import com.helloclue.androidassignment.presentation.PhotosViewModel
 import com.helloclue.androidassignment.presentation.UiState
+import com.helloclue.androidassignment.presentation.photos.PhotosViewModel
 
 @Composable
 fun Photos(photosViewModel: PhotosViewModel = viewModel()) {
@@ -50,9 +50,11 @@ fun Photos(photosViewModel: PhotosViewModel = viewModel()) {
                         contentAlignment = Alignment.Center
                     ) {
                         AsyncImage(
-                            model = urls.get(index),
+
+                            model = urls[index],
                             contentDescription = null,
-                            modifier = Modifier.fillMaxSize(),
+                            modifier = Modifier
+                                .fillMaxSize(),
                             contentScale = ContentScale.Crop
                         )
                     }

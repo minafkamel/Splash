@@ -1,4 +1,4 @@
-package com.helloclue.androidassignment.presentation.addphoto
+package com.helloclue.androidassignment.presentation.photos.add
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.FloatingActionButton
@@ -16,7 +16,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.helloclue.androidassignment.presentation.PhotosViewModel
+import com.helloclue.androidassignment.presentation.photos.PhotosViewModel
 
 @Composable
 fun FloatingButton(photosViewModel: PhotosViewModel = viewModel()) {

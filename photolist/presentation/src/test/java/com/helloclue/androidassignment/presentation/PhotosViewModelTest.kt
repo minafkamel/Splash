@@ -4,12 +4,12 @@ import app.cash.turbine.test
 import com.helloclue.androidassignment.domain.AddRandomPhotoUseCase
 import com.helloclue.androidassignment.domain.GetStoredUrlsUseCase
 import com.helloclue.androidassignment.domain.Resource
+import com.helloclue.androidassignment.presentation.photos.PhotosViewModel
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.test.runTest
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mockito.mock
-import org.mockito.Mockito.verify
 import org.mockito.kotlin.whenever
 import kotlin.test.assertEquals
 

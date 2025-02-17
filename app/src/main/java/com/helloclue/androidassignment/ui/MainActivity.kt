@@ -3,7 +3,7 @@ package com.helloclue.androidassignment.ui
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.helloclue.androidassignment.presentation.PhotosScreen
+import com.helloclue.androidassignment.presentation.photos.PhotosScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

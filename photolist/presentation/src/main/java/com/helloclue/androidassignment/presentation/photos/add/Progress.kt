@@ -1,4 +1,4 @@
-package com.helloclue.androidassignment.presentation.addphoto
+package com.helloclue.androidassignment.presentation.photos.add
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -8,9 +8,8 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.helloclue.androidassignment.presentation.PhotosViewModel
 import com.helloclue.androidassignment.presentation.UiState
-
+import com.helloclue.androidassignment.presentation.photos.PhotosViewModel
 
 @Composable
 fun Progress(photosViewModel: PhotosViewModel = viewModel()) {

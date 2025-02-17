@@ -1,12 +1,12 @@
-package com.helloclue.androidassignment.presentation.addphoto
+package com.helloclue.androidassignment.presentation.photos.add
 
 import android.widget.Toast
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.helloclue.androidassignment.presentation.PhotosViewModel
 import com.helloclue.androidassignment.presentation.UiState
+import com.helloclue.androidassignment.presentation.photos.PhotosViewModel
 
 @Composable
 fun Error(photosViewModel: PhotosViewModel = viewModel()) {
