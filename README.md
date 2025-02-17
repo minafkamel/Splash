@@ -73,11 +73,13 @@ Welcome to the Cue Assignment App. The project aims to demonstrate my Android En
 The app is built with the concepts of [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) in mind however optimised for Android. Clean Architecture has 3 main layers (presentation, domain and data) that will be explained below along with their classes. The app uses MVVM, Compose, Coroutines, Kotlin, Hilt, Retrofit and Room to achieve its goal.
 
 
+<img src="https://github.com/clue-external/clue-android-challenge-minafkamel/blob/feature/modules.png" alt="Modules">
+
 # Decisions and tradeoffs 
 
-A few important decisions were taken in order to deliver a viable solution in an adequate time. These are:
+A few important decisions were made in order to deliver a viable solution in an adequate time. These are:
 
-## Modernisation of the codebase:
+## Modernisation of the codebase
 Since the initial code is fairly old (3 years old) with little modernisation, I decided to update it to the latest state of the art technologies. The following has been done:
 - Added a Version catalog to organise dependencies via a .toml file
 - The `MainActivity` was converted to compose by extending `ComponentActivity `and removing the xml files: `activity_main.xml` and `item_photo.xml`
