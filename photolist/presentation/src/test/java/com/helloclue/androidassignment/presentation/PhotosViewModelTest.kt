@@ -2,9 +2,11 @@ package com.helloclue.androidassignment.presentation
 
 import app.cash.turbine.test
 import com.helloclue.androidassignment.domain.AddRandomPhotoUseCase
-import com.helloclue.androidassignment.domain.GetStoredUrlsUseCase
+import com.helloclue.androidassignment.domain.GetPhotosUseCase
+import com.helloclue.androidassignment.domain.GetPhotosUseCase.PhotoInfo
 import com.helloclue.androidassignment.domain.Resource
 import com.helloclue.androidassignment.presentation.photos.PhotosViewModel
+import com.helloclue.androidassignment.presentation.photos.grid.PhotoUi
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.test.runTest
 import org.junit.Rule
@@ -19,7 +21,7 @@ class PhotosViewModelTest {
     val testDispatcherRule = MainDispatcherRule()
 
     private var addRandomPhotoUseCase: AddRandomPhotoUseCase = mock()
-    private var getStoredUrlsUseCase: GetStoredUrlsUseCase = mock()
+    private var getPhotosUseCase: GetPhotosUseCase = mock()
 
     private lateinit var sut: PhotosViewModel
 
@@ -27,26 +29,27 @@ class PhotosViewModelTest {
     fun `loadStoredUrlsUiState emits Success with urls when getStoredUrlsUseCase emits`() =
         runTest {
             // Arrange
-            val urls = listOf("url1", "url2")
-            whenever(getStoredUrlsUseCase.invoke()).thenReturn(flowOf(Resource.Success(urls)))
+            val photos = listOf(PhotoInfo("123", "url1"), PhotoInfo("456", "url2"))
+            val photoUi = listOf(PhotoUi("123", "url1"), PhotoUi("456", "url2"))
+            whenever(getPhotosUseCase.invoke()).thenReturn(flowOf(Resource.Success(photos)))
 
             // Act
-            sut = PhotosViewModel(addRandomPhotoUseCase, getStoredUrlsUseCase)
+            sut = PhotosViewModel(addRandomPhotoUseCase, getPhotosUseCase)
 
             // Assert
             sut.loadStoredUrlsUiState.test {
                 assertEquals(UiState.Loading, awaitItem())
-                assertEquals(UiState.Success(urls), awaitItem())
+                assertEquals(UiState.Success(photoUi), awaitItem())
             }
         }
 
     @Test
     fun `loadStoredUrlsUiState emits error when getStoredUrlsUseCase emits error`() = runTest {
         // Arrange
-        whenever(getStoredUrlsUseCase.invoke()).thenReturn(flowOf(Resource.Error))
+        whenever(getPhotosUseCase.invoke()).thenReturn(flowOf(Resource.Error))
 
         // Act
-        sut = PhotosViewModel(addRandomPhotoUseCase, getStoredUrlsUseCase)
+        sut = PhotosViewModel(addRandomPhotoUseCase, getPhotosUseCase)
 
         // Assert
         sut.loadStoredUrlsUiState.test {
@@ -58,11 +61,11 @@ class PhotosViewModelTest {
     @Test
     fun `addPhotoUiState emits Success when addRandomPhotoUseCase returns Success`() = runTest {
         // Arrange
-        whenever(getStoredUrlsUseCase.invoke()).thenReturn(flowOf(Resource.Success(listOf())))
+        whenever(getPhotosUseCase.invoke()).thenReturn(flowOf(Resource.Success(listOf())))
         whenever(addRandomPhotoUseCase.invoke()).thenReturn(Resource.Success(Unit))
 
         // Act
-        sut = PhotosViewModel(addRandomPhotoUseCase, getStoredUrlsUseCase)
+        sut = PhotosViewModel(addRandomPhotoUseCase, getPhotosUseCase)
         sut.addPhotoClicked()
 
         // Assert
@@ -76,11 +79,11 @@ class PhotosViewModelTest {
     @Test
     fun `addPhotoUiState emits Error when addRandomPhotoUseCase returns Error`() = runTest {
         // Arrange
-        whenever(getStoredUrlsUseCase.invoke()).thenReturn(flowOf(Resource.Success(listOf())))
+        whenever(getPhotosUseCase.invoke()).thenReturn(flowOf(Resource.Success(listOf())))
         whenever(addRandomPhotoUseCase.invoke()).thenReturn(Resource.Error)
 
         // Act
-        sut = PhotosViewModel(addRandomPhotoUseCase, getStoredUrlsUseCase)
+        sut = PhotosViewModel(addRandomPhotoUseCase, getPhotosUseCase)
         sut.addPhotoClicked()
 
         // Assert

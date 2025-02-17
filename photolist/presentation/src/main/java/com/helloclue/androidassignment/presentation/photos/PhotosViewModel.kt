@@ -3,9 +3,11 @@ package com.helloclue.androidassignment.presentation.photos
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.helloclue.androidassignment.domain.AddRandomPhotoUseCase
-import com.helloclue.androidassignment.domain.GetStoredUrlsUseCase
+import com.helloclue.androidassignment.domain.GetPhotosUseCase
 import com.helloclue.androidassignment.domain.Resource
 import com.helloclue.androidassignment.presentation.UiState
+import com.helloclue.androidassignment.presentation.photos.grid.PhotoUi
+import com.helloclue.androidassignment.presentation.photos.grid.toUiModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -16,21 +18,22 @@ import javax.inject.Inject
 @HiltViewModel
 class PhotosViewModel @Inject constructor(
     private val addRandomPhotoUseCase: AddRandomPhotoUseCase,
-    private val getStoredUrlsUseCase: GetStoredUrlsUseCase
+    private val getPhotosUseCase: GetPhotosUseCase
 ) : ViewModel() {
 
     private val _addPhotoUIState = MutableStateFlow<UiState<Unit>>(UiState.Init)
     val addPhotoUiState: StateFlow<UiState<Unit>> get() = _addPhotoUIState
 
-    private val _loadStoredUrlsUiState = MutableStateFlow<UiState<List<String?>>>(UiState.Loading)
-    val loadStoredUrlsUiState: StateFlow<UiState<List<String?>>> get() = _loadStoredUrlsUiState
+    private val _loadStoredUrlsUiState = MutableStateFlow<UiState<List<PhotoUi>>>(UiState.Loading)
+    val loadStoredUrlsUiState: StateFlow<UiState<List<PhotoUi>>> get() = _loadStoredUrlsUiState
 
     init {
         viewModelScope.launch {
-            getStoredUrlsUseCase.invoke().collect { resource ->
+            getPhotosUseCase.invoke().collect { resource ->
                 when (resource) {
                     is Resource.Success -> {
-                        _loadStoredUrlsUiState.value = UiState.Success(resource.data!!)
+                        _loadStoredUrlsUiState.value =
+                            UiState.Success(resource.data.map { it.toUiModel() })
                     }
 
                     else -> {

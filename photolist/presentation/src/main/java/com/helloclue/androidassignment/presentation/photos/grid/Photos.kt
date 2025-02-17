@@ -29,7 +29,7 @@ fun Photos(photosViewModel: PhotosViewModel = viewModel()) {
     Error()
 
     if (loadStoredUrlsState.value is UiState.Success) {
-        val urls = (loadStoredUrlsState.value as UiState.Success).data
+        val photos = (loadStoredUrlsState.value as UiState.Success).data
 
         LazyVerticalGrid(
             columns = GridCells.Fixed(2),
@@ -38,7 +38,7 @@ fun Photos(photosViewModel: PhotosViewModel = viewModel()) {
             verticalArrangement = Arrangement.spacedBy(16.dp),
             horizontalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            items(urls.size) { index ->
+            items(photos.size) { index ->
                 Card(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -50,8 +50,7 @@ fun Photos(photosViewModel: PhotosViewModel = viewModel()) {
                         contentAlignment = Alignment.Center
                     ) {
                         AsyncImage(
-
-                            model = urls[index],
+                            model = photos[index].imageUrl,
                             contentDescription = null,
                             modifier = Modifier
                                 .fillMaxSize(),

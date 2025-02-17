@@ -1,6 +1,5 @@
 package com.helloclue.androidassignment.domain
 
-import app.cash.turbine.test
 import com.helloclue.androidassignment.photolist.data.Photo
 import com.helloclue.androidassignment.photolist.data.Repository
 import kotlinx.coroutines.flow.first
@@ -13,15 +12,15 @@ import org.junit.Test
 import org.mockito.Mockito.mock
 import org.mockito.kotlin.whenever
 
-class GetStoredUrlsUseCaseTest {
+class GetPhotosUseCaseTest {
 
     private val repository: Repository = mock()
 
-    lateinit var sut: GetStoredUrlsUseCase
+    lateinit var sut: GetPhotosUseCase
 
     @Before
     fun setup() {
-        sut = GetStoredUrlsUseCase(repository)
+        sut = GetPhotosUseCase(repository)
     }
 
     @Test
