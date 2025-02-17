@@ -1,5 +1,6 @@
 package com.helloclue.androidassignment.domain
 
+import com.helloclue.androidassignment.domain.GetPhotosUseCase.PhotoInfo
 import com.helloclue.androidassignment.photolist.data.Photo
 import com.helloclue.androidassignment.photolist.data.Repository
 import kotlinx.coroutines.flow.first
@@ -27,11 +28,11 @@ class GetPhotosUseCaseTest {
     fun `emits Resource Success with list of URLs when repository emits photos`(): Unit = runTest {
         // Arrange
         val photos = listOf(
-            defaultPhoto.copy(urlRegular = "url1"),
-            defaultPhoto.copy(urlRegular = "url2"),
-            defaultPhoto.copy(urlRegular = "url3"),
+            defaultPhoto.copy(id = "123", urlRegular = "url1"),
+            defaultPhoto.copy(id = "456", urlRegular = "url2"),
+            defaultPhoto.copy(id = "789", urlRegular = "url3"),
         )
-        val expectedUrls = photos.map { it.urlRegular }
+        val expectedPhotos = photos.map { PhotoInfo(it.id, it.urlRegular!!) }
 
         whenever(repository.photosFlow).thenReturn(flowOf(photos))
 
@@ -40,15 +41,13 @@ class GetPhotosUseCaseTest {
 
         // Assert
         assertTrue(resource is Resource.Success)
-        assertEquals(expectedUrls, (resource as Resource.Success).data)
+        assertEquals(expectedPhotos, (resource as Resource.Success).data)
     }
 
     @Test
     fun `emits Resource Error with an url is null`(): Unit = runTest {
         // Arrange
         val photos = listOf(defaultPhoto.copy(urlRegular = null))
-
-        val expectedUrls = photos.map { it.urlRegular }
 
         whenever(repository.photosFlow).thenReturn(flowOf(photos))
 
