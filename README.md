@@ -27,6 +27,8 @@ Welcome to the Cue Assignment App. The project aims to demonstrate my Android En
         - [Client id Interception and security](#client-id-interception-and-security)
         - [Dependency injection](#dependency-injection)
         - [Testing](#testing)
+            - [Unit Testing](#unit-testing)
+            - [UI Testing](#ui-testing)
         - [Error and Progress](#error-and-progress)
      - [Functionalities](#functionalities)
 	     - [Functionality 1: Add Photo](#functionality-1-add-photo)
@@ -122,11 +124,16 @@ The `ClientIdInterceptor` attaches the `id` given by the API to the header of th
 `Hilt` was used to inject dependencies into different classes. For e.g use cases in view models and data sources in repositories. Additionally, assisted injection was used to pass the id of the clicked photo to the `DetailsViewModel` instead of adding a `setId` method. This way the functionality of the view model can run on `init{}`.
 
 ## Testing
-Some unit tests were to important parts of the code. Ideally all testable code should have unit tests before a PR is submitted. These tested classes are:
+The tests are organised into Arrange/Act/Assert blocks to be read and understood easily.
+
+ ### Unit Testing
+Some unit tests were written to test the to important parts of the code. Ideally all testable code should have unit tests before a PR is submitted. These tested classes are:
 - `GetPhotosUseCaseTest`
 - `PhotosViewModelTest`
 
-The tests are organised into Arrange/Act/Assert blocks to be read and understood easily.
+### UI Testing
+A UI Test has been written to test the Add Photo functionality. Ideally, the critical path of the app should be automated.
+- `AddPhotoKtTest`
 
 ## Error and Progress
 In module `:common:ui`, `CommonError` and `CommonProgress` composable were introduced to be reused in different features. Different functionalities have their own `Error` and `Progress` composables that use the common ones. They were taken out to separate files to achieve the following:
