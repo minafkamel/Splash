@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.helloclue.androidassignment.domain.photos.AddRandomPhotoUseCase
 import com.helloclue.androidassignment.domain.photos.GetPhotosUseCase
-import com.helloclue.androidassignment.domain.Resource
+import com.helloclue.androidassignment.common.domain.Resource
 import com.helloclue.androidassignment.presentation.UiState
 import com.helloclue.androidassignment.presentation.photos.grid.PhotoUi
 import com.helloclue.androidassignment.presentation.photos.grid.toUiModel

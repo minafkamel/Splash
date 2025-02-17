@@ -1,6 +1,6 @@
 package com.helloclue.androidassignment.domain.details
 
-import com.helloclue.androidassignment.domain.Resource
+import com.helloclue.androidassignment.common.domain.Resource
 import com.helloclue.androidassignment.photolist.data.Photo
 import com.helloclue.androidassignment.photolist.data.Repository
 import kotlinx.coroutines.flow.Flow

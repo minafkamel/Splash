@@ -1,11 +1,10 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
-    alias(libs.plugins.org.jetbrains.kotlin.kapt)
 }
 
 android {
-    namespace = "com.helloclue.androidassignment.domain"
+    namespace = "com.helloclue.androidassignment.common.domain"
     compileSdk = 34
 
     defaultConfig {
@@ -30,23 +29,8 @@ android {
 
 dependencies {
 
-    // Android
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
-
-    // Dagger
-    implementation(libs.dagger.hilt)
-    kapt(libs.dagger.hilt.compiler)
-
-    // Tests
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
-    testImplementation(libs.mockito.kotlin)
-    testImplementation(libs.kotlin.test)
-    testImplementation(libs.kotlinx.coroutines.test)
-    testImplementation(libs.turbine)
-    testImplementation(libs.mockito.core)
-
-    implementation(project(":photolist:data"))
-    api(project(":common:domain"))
 }

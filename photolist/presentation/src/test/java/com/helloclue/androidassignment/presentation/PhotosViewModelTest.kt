@@ -4,7 +4,7 @@ import app.cash.turbine.test
 import com.helloclue.androidassignment.domain.photos.AddRandomPhotoUseCase
 import com.helloclue.androidassignment.domain.photos.GetPhotosUseCase
 import com.helloclue.androidassignment.domain.photos.GetPhotosUseCase.PhotoInfo
-import com.helloclue.androidassignment.domain.Resource
+import com.helloclue.androidassignment.common.domain.Resource
 import com.helloclue.androidassignment.presentation.photos.PhotosViewModel
 import com.helloclue.androidassignment.presentation.photos.grid.PhotoUi
 import kotlinx.coroutines.flow.flowOf

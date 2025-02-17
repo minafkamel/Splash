@@ -1,4 +1,4 @@
-package com.helloclue.androidassignment.domain
+package com.helloclue.androidassignment.common.domain
 
 sealed class Resource<out T> {
     data class Success<out T>(val data: T ) : Resource<T>()

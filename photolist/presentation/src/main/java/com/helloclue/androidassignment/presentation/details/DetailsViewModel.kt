@@ -2,7 +2,7 @@ package com.helloclue.androidassignment.presentation.details
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.helloclue.androidassignment.domain.Resource
+import com.helloclue.androidassignment.common.domain.Resource
 import com.helloclue.androidassignment.domain.details.GetDetailsUseCase
 import com.helloclue.androidassignment.presentation.UiState
 import dagger.assisted.Assisted
@@ -25,7 +25,7 @@ class DetailsViewModel @AssistedInject constructor(
 
     init {
         viewModelScope.launch {
-            getDetailsUseCase.invoke(id).collectLatest { resource ->
+            getDetailsUseCase.invoke(id).collect { resource ->
                 if (resource is Resource.Success) {
                     _detailsUiState.value =
                         UiState.Success(resource.data.toUiModel())

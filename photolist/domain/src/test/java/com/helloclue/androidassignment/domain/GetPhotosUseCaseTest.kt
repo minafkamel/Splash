@@ -1,5 +1,6 @@
 package com.helloclue.androidassignment.domain
 
+import com.helloclue.androidassignment.common.domain.Resource
 import com.helloclue.androidassignment.domain.photos.GetPhotosUseCase
 import com.helloclue.androidassignment.domain.photos.GetPhotosUseCase.PhotoInfo
 import com.helloclue.androidassignment.photolist.data.Photo
