@@ -68,5 +68,6 @@ dependencies {
     testImplementation(libs.mockito.core)
 
     implementation(project(":photolist:domain"))
+    implementation(project(":common:ui"))
 
 }
