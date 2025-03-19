@@ -1,6 +1,6 @@
-# Clue Assignment App
+#  Splash App
 
-Welcome to the Cue Assignment App. The project aims to demonstrate my Android Engineering skills. The app offers an add button that retrieves a random photo from the Unsplash API. It displays a two column list with the images. Upon click, details of the image like the location it was taken in, a description of it and the number of like sit received are displayed.
+Welcome to the Splash App. The project aims to demonstrate my Android Engineering skills. The app offers an add button that retrieves a random photo from the Unsplash API. It displays a two column list with the images. Upon click, details of the image like the location it was taken in, a description of it and the number of like sit received are displayed.
 
 
 | Author |  |
@@ -8,7 +8,7 @@ Welcome to the Cue Assignment App. The project aims to demonstrate my Android En
 | Mina Kamel | Android Engineer  |
 
 ## Table of Contents
-- [Clue Assignment App](#clue-assignment-app)
+- [Splash App](#splash-assignment-app)
     - [Demo](#demo)
     - [To try the app](#to-try-the-app)
 	    - [Adding Photos](#adding-photos)
@@ -45,7 +45,7 @@ Welcome to the Cue Assignment App. The project aims to demonstrate my Android En
 			  - [Data](#data)
 # Demo
 <p align="center">
-<img src="https://github.com/clue-external/clue-android-challenge-minafkamel/blob/feature/demo.gif" alt="Demo" width="420" height="840">
+<img src="https://github.com/minafkamel/Splash/blob/main/demo.gif" alt="Demo" width="420" height="840">
 
 # To try the app
 - Switch to `feature` branch and pull latest
@@ -73,17 +73,11 @@ Welcome to the Cue Assignment App. The project aims to demonstrate my Android En
 The app is built with the concepts of [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) in mind however optimised for Android. Clean Architecture has 3 main layers (presentation, domain and data) that will be explained below along with their classes. The app uses MVVM, Compose, Coroutines, Kotlin, Hilt, Retrofit and Room to achieve its goal.
 
 
-<img src="https://github.com/clue-external/clue-android-challenge-minafkamel/blob/feature/modules.png" alt="Modules">
+<img src="https://github.com/minafkamel/Splash/blob/main/modules.png" alt="Modules">
 
 # Decisions and tradeoffs 
 
 A few important decisions were made in order to deliver a viable solution in an adequate time. These are:
-
-## Modernisation of the codebase
-Since the initial code is fairly old (3 years old) with little modernisation, I decided to update it to the latest state of the art technologies. The following has been done:
-- Added a Version catalog to organise dependencies via a .toml file
-- The `MainActivity` was converted to compose by extending `ComponentActivity `and removing the xml files: `activity_main.xml` and `item_photo.xml`
-- Gradle files were converted to Kotlin DSL
 
 ## Modularisation
 In order to demonstrate modularisation, multiple modules and submodules were added.

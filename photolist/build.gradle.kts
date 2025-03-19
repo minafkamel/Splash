@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.helloclue.androidassignment.photolist"
+    namespace = "com.hellosplash.androidassignment.photolist"
     compileSdk = 34
 
     defaultConfig {

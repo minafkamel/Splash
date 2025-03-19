@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.helloclue.androidassignment.common.domain"
+    namespace = "com.hellosplash.androidassignment.common.domain"
     compileSdk = 34
 
     defaultConfig {

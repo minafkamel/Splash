@@ -13,7 +13,7 @@ val localProperties = Properties().apply {
 val clientId: String = localProperties.getProperty("CLIENT_ID")
 
 android {
-    namespace = "com.helloclue.androidassignment.photolist.data"
+    namespace = "com.hellosplash.androidassignment.photolist.data"
     compileSdk = 34
 
     buildFeatures {

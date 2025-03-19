@@ -1,10 +1,10 @@
-package com.helloclue.androidassignment.domain
+package com.hellosplash.androidassignment.domain
 
-import com.helloclue.androidassignment.common.domain.Resource
-import com.helloclue.androidassignment.domain.photos.GetPhotosUseCase
-import com.helloclue.androidassignment.domain.photos.GetPhotosUseCase.PhotoInfo
-import com.helloclue.androidassignment.photolist.data.Photo
-import com.helloclue.androidassignment.photolist.data.Repository
+import com.hellosplash.androidassignment.common.domain.Resource
+import com.hellosplash.androidassignment.domain.photos.GetPhotosUseCase
+import com.hellosplash.androidassignment.domain.photos.GetPhotosUseCase.PhotoInfo
+import com.hellosplash.androidassignment.photolist.data.Photo
+import com.hellosplash.androidassignment.photolist.data.Repository
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.test.runTest

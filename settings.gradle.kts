@@ -23,7 +23,7 @@ dependencyResolutionManagement {
 
 }
 
-rootProject.name = "Clue-Android-Assignment"
+rootProject.name = "Splash"
 include(":app")
 include(":photolist")
 include(":photolist:data")
