@@ -1,4 +1,4 @@
-package com.hellosplash.androidassignment.domain
+package com.helloclue.androidassignment.domain
 
 import com.hellosplash.androidassignment.common.domain.Resource
 import com.hellosplash.androidassignment.domain.photos.GetPhotosUseCase
