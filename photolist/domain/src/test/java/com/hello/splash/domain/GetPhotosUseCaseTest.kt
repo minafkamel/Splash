@@ -66,5 +66,6 @@ class GetPhotosUseCaseTest {
         description = "dummyDescription",
         locationName = "dummyLOcationName",
         likes = "dummyLikes",
+        createdAt = "15/2/2024"
     )
 }
