@@ -9,6 +9,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -23,19 +24,23 @@ fun Dialog(clickedId: MutableState<String>) {
             key = clickedId.value,
             creationCallback = { factory -> factory.create(id = clickedId.value) }
         )
-        val state = viewModel.detailsUiState.collectAsState()
+        val uiState by viewModel.detailsUiState.collectAsState()
 
-        if (state.value is UiState.Success) {
-            val details = (state.value as UiState.Success).data
-            AlertDialog(
-                onDismissRequest = {
-                    clickedId.value = ""
-                },
-                title = { Title() },
-                text = { Body(details) },
-                confirmButton = { },
-                dismissButton = null
-            )
+        when (val state = uiState) {
+            is UiState.Success -> {
+                val details = state.data
+                AlertDialog(
+                    onDismissRequest = {
+                        clickedId.value = ""
+                    },
+                    title = { Title() },
+                    text = { Body(details) },
+                    confirmButton = { },
+                    dismissButton = null
+                )
+            }
+
+            else -> {}
         }
     }
 }

@@ -13,6 +13,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -28,48 +29,50 @@ import com.hellosplash.androidassignment.presentation.photos.PhotosViewModel
 
 @Composable
 fun Photos(photosViewModel: PhotosViewModel = viewModel()) {
-    val loadStoredUrlsState = photosViewModel.loadStoredUrlsUiState.collectAsState()
+    val loadStoredUrlsState by photosViewModel.loadStoredUrlsUiState.collectAsState()
     val clickedId = remember { mutableStateOf("") }
 
     Progress()
     Error()
     Dialog(clickedId)
 
-    if (loadStoredUrlsState.value is UiState.Success) {
-        val photos = (loadStoredUrlsState.value as UiState.Success).data
-
-        LazyVerticalGrid(
-            columns = GridCells.Fixed(2),
-            modifier = Modifier.fillMaxSize(),
-            contentPadding = PaddingValues(16.dp),
-            verticalArrangement = Arrangement.spacedBy(16.dp),
-            horizontalArrangement = Arrangement.spacedBy(16.dp)
-        ) {
-            items(photos.size) { index ->
-                Card(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(200.dp)
-                        .testTag("card_item"),
-                    shape = RoundedCornerShape(8.dp)
-                ) {
-                    Box(
-                        modifier = Modifier.fillMaxSize(),
-                        contentAlignment = Alignment.Center
+    when (val state = loadStoredUrlsState) {
+        is UiState.Success -> {
+            LazyVerticalGrid(
+                columns = GridCells.Fixed(2),
+                modifier = Modifier.fillMaxSize(),
+                contentPadding = PaddingValues(16.dp),
+                verticalArrangement = Arrangement.spacedBy(16.dp),
+                horizontalArrangement = Arrangement.spacedBy(16.dp)
+            ) {
+                items(state.data.size) { index ->
+                    Card(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(200.dp)
+                            .testTag("card_item"),
+                        shape = RoundedCornerShape(8.dp)
                     ) {
-                        AsyncImage(
-                            model = photos[index].imageUrl,
-                            contentDescription = null,
-                            modifier = Modifier
-                                .fillMaxSize()
-                                .clickable {
-                                    clickedId.value = photos[index].photoId
-                                },
-                            contentScale = ContentScale.Crop
-                        )
+                        Box(
+                            modifier = Modifier.fillMaxSize(),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            AsyncImage(
+                                model = state.data[index].imageUrl,
+                                contentDescription = null,
+                                modifier = Modifier
+                                    .fillMaxSize()
+                                    .clickable {
+                                        clickedId.value = state.data[index].photoId
+                                    },
+                                contentScale = ContentScale.Crop
+                            )
+                        }
                     }
                 }
             }
         }
+
+        else -> {}
     }
 }
