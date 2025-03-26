@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.hellosplash.androidassignment.presentation"
+    namespace = "com.hello.splash.presentation"
     compileSdk = 34
 
     defaultConfig {

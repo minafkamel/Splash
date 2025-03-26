@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.hellosplash.androidassignment"
+    namespace = "com.hello.splash"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.hellosplash.androidassignment"
+        applicationId = "com.hello.splash"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
