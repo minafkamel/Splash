@@ -10,5 +10,6 @@ data class Photo(
     @SerializedName("urlRegular") val urlRegular: String?,  // Flattened url
     @SerializedName("locationName") val locationName: String?, // Flattened location
     @SerializedName("likes") val likes: String?,
-    @SerializedName("description") val description: String?
+    @SerializedName("description") val description: String?,
+    @SerializedName("created_at") val createdAt: String?
 )

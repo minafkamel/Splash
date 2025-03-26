@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.hellosplash.androidassignment.common.ui.CommonError
+import com.hellosplash.androidassignment.common.ui.composables.CommonError
 import com.hellosplash.androidassignment.presentation.UiState
 import com.hellosplash.androidassignment.presentation.photos.PhotosViewModel
 

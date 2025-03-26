@@ -1,5 +1,6 @@
 package com.hellosplash.androidassignment.domain.photos
 
+import android.util.Log
 import com.hellosplash.androidassignment.common.domain.Resource
 import com.hellosplash.androidassignment.photolist.data.Repository
 import kotlinx.coroutines.flow.Flow
@@ -13,7 +14,9 @@ class GetPhotosUseCase @Inject constructor(private val repository: Repository) {
         repository.photosFlow
             .map { photos -> photos.map { PhotoInfo(it.id, checkNotNull(it.urlRegular)) } }
             .map { Resource.Success(it) as Resource<List<PhotoInfo>> }
-            .catch { emit(Resource.Error) }
+            .catch { it -> it.message
+                Log.d("ejkashfdkjah", it.message!!)
+                emit(Resource.Error) }
 
     data class PhotoInfo(val id: String, val url: String)
 }

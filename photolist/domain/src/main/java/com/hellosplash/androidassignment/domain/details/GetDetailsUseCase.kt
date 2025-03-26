@@ -10,7 +10,7 @@ import javax.inject.Inject
 
 class GetDetailsUseCase @Inject constructor(private val repository: Repository) {
 
-    suspend operator fun invoke(id: String): Flow<Resource<DetailsInfo>> =
+    operator fun invoke(id: String): Flow<Resource<DetailsInfo>> =
         repository.getPhotoById(id)
             .map { createDetailsInfo(it) }
             .map { Resource.Success(it) as Resource<DetailsInfo> }
@@ -19,8 +19,14 @@ class GetDetailsUseCase @Inject constructor(private val repository: Repository) 
     private fun createDetailsInfo(it: Photo) = DetailsInfo(
         it.locationName ?: "",
         it.likes ?: "",
-        it.description ?: ""
+        it.description ?: "",
+        it.createdAt ?: ""
     )
 
-    data class DetailsInfo(val locationName: String, val likes: String, val description: String)
+    data class DetailsInfo(
+        val locationName: String,
+        val likes: String,
+        val description: String,
+        val creationDate: String
+    )
 }

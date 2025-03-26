@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -51,9 +52,13 @@ fun Body(details: DetailsUi) {
         Row(Modifier.padding(bottom = 16.dp)) {
             Text(details.description)
         }
-        Row(Modifier.fillMaxWidth()) {
+        Row(Modifier
+            .fillMaxWidth()
+            .padding(bottom = 16.dp)) {
             Text(
-                modifier = Modifier.weight(2f).padding(end = 16.dp),
+                modifier = Modifier
+                    .weight(2f)
+                    .padding(end = 16.dp),
                 text = stringResource(
                     id = R.string.location,
                     details.location.takeIf { it.isNotEmpty() }
@@ -63,8 +68,10 @@ fun Body(details: DetailsUi) {
                 text = stringResource(id = R.string.likes, details.likes)
             )
         }
+        Row(Modifier.align(Alignment.End)) {
+            Text(details.date)
+        }
     }
-
 }
 
 @Composable

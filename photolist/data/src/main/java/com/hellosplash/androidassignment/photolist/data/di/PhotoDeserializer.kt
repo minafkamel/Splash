@@ -8,7 +8,11 @@ import java.lang.reflect.Type
 
 class PhotoDeserializer : JsonDeserializer<Photo> {
 
-    override fun deserialize(json: JsonElement?, typeOfT: Type?, context: JsonDeserializationContext?): Photo {
+    override fun deserialize(
+        json: JsonElement?,
+        typeOfT: Type?,
+        context: JsonDeserializationContext?
+    ): Photo {
         if (json == null || json !is JsonObject) {
             throw JsonParseException("Invalid JSON for Photo object")
         }
@@ -21,13 +25,15 @@ class PhotoDeserializer : JsonDeserializer<Photo> {
         val description = getJsonString(jsonObject, "alt_description")
         val urlRegular = getJsonString(jsonObject.getAsJsonObject("urls"), "regular")
         val locationName = getJsonString(jsonObject.getAsJsonObject("location"), "name")
+        val createdAt = getJsonString(jsonObject, "created_at")
 
         return Photo(
             id = id,
             urlRegular = urlRegular,
             locationName = locationName,
             likes = likes,
-            description = description
+            description = description,
+            createdAt = createdAt
         )
     }
 

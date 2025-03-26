@@ -1,4 +1,4 @@
-package com.hellosplash.androidassignment.common.ui
+package com.hellosplash.androidassignment.common.ui.composables
 
 import android.widget.Toast
 import androidx.compose.runtime.Composable

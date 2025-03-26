@@ -3,7 +3,7 @@ package com.hellosplash.androidassignment.presentation.photos.add
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.hellosplash.androidassignment.common.ui.CommonProgress
+import com.hellosplash.androidassignment.common.ui.composables.CommonProgress
 import com.hellosplash.androidassignment.presentation.UiState
 import com.hellosplash.androidassignment.presentation.photos.PhotosViewModel
 
