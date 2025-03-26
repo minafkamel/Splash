@@ -32,15 +32,15 @@ Welcome to the Splash App. The project aims to demonstrate my Android Engineerin
         - [Error and Progress](#error-and-progress)
      - [Functionalities](#functionalities)
 	     - [Functionality 1: Add Photo](#functionality-1-add-photo)
-		    -  [Presentation](#presentation)
+		    -  [Presentation](#ui)
 		    -  [Domain](#domain)
 		    - [Data](#data)
 		  - [Functionality 2: Display of photos](#functionality-2-display-of-photos)
-			  -  [Presentation](#presentation)
+			  -  [Presentation](#ui)
 			  -  [Domain](#domain)
 			  - [Data](#data)
 		  - [Functionality 3: Details](#functionality-3-details)
-			  -  [Presentation](#presentation)
+			  -  [Presentation](#ui)
 			  -  [Domain](#domain)
 			  - [Data](#data)
 # Demo
@@ -70,7 +70,7 @@ Welcome to the Splash App. The project aims to demonstrate my Android Engineerin
 
 # Architecture
 
-The app is built with the concepts of [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) in mind however optimised for Android. Clean Architecture has 3 main layers (presentation, domain and data) that will be explained below along with their classes. The app uses MVVM, Compose, Coroutines, Kotlin, Hilt, Retrofit and Room to achieve its goal.
+The app is built with the concepts of [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) in mind however optimised for Android. Clean Architecture has 3 main layers (ui, domain and data) that will be explained below along with their classes. The app uses MVVM, Compose, Coroutines, Kotlin, Hilt, Retrofit and Room to achieve its goal.
 
 
 <img src="https://github.com/minafkamel/Splash/blob/main/modules.png" alt="Modules">
@@ -84,7 +84,7 @@ In order to demonstrate modularisation, multiple modules and submodules were add
 The main feature of the app lies in a module by itself called :photolist. This module has 3 submodules:
 - :photolist:data
 - :photolist:domain
-- :photolist:presentation
+- :photolist:ui
 
 In addition, there's a :common module for common classes. This module has a :common:ui module for common views and :common:domain module for common domain classes.
 
