@@ -14,7 +14,7 @@ val clientId: String = localProperties.getProperty("CLIENT_ID")
 
 android {
     namespace = "com.hello.splash.photolist.data"
-    compileSdk = 34
+    compileSdk = 35
 
     buildFeatures {
         buildConfig = true

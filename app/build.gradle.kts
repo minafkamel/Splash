@@ -8,7 +8,7 @@ plugins {
 
 android {
     namespace = "com.hello.splash"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.hello.splash"
