@@ -20,13 +20,15 @@ class GetDetailsUseCase @Inject constructor(private val repository: Repository) 
         it.locationName ?: "",
         it.likes ?: "",
         it.description ?: "",
-        it.createdAt ?: ""
+        it.createdAt ?: "",
+        it.urlRegular ?: "",
     )
 
     data class DetailsInfo(
         val locationName: String,
         val likes: String,
         val description: String,
-        val creationDate: String
+        val creationDate: String,
+        val url: String
     )
 }

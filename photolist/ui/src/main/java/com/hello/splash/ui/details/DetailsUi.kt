@@ -7,12 +7,14 @@ data class DetailsUi(
     val location: String,
     val likes: String,
     val description: String,
-    val date: String
+    val date: String,
+    val imageUrl: String
 )
 
 fun DetailsInfo.toUiModel(dateFormatter: DateFormatter) = DetailsUi(
     location = this.locationName,
     likes = this.likes,
     description = this.description,
-    date = dateFormatter.format(this.creationDate)
+    date = dateFormatter.format(this.creationDate),
+    imageUrl = this.url
 )

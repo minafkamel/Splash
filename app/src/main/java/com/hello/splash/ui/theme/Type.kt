@@ -1,4 +1,4 @@
-package com.example.composeplayground.ui.theme
+package com.hello.splash.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

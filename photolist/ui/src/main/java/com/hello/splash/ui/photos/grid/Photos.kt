@@ -21,16 +21,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavHostController
 import coil.compose.AsyncImage
 import com.hello.splash.ui.UiState
 
 import com.hello.splash.ui.photos.PhotosViewModel
 
 @Composable
-fun Photos(photosViewModel: PhotosViewModel = viewModel()) {
+fun Photos(navController: NavHostController, photosViewModel: PhotosViewModel = hiltViewModel()) {
     val loadStoredUrlsState by photosViewModel.loadStoredUrlsUiState.collectAsState()
-    val clickedId = remember { mutableStateOf("") }
 
     Progress()
     Error()
@@ -62,7 +63,7 @@ fun Photos(photosViewModel: PhotosViewModel = viewModel()) {
                                 modifier = Modifier
                                     .fillMaxSize()
                                     .clickable {
-                                        clickedId.value = state.data[index].photoId
+                                        navController.navigate("details/${state.data[index].photoId}")
                                     },
                                 contentScale = ContentScale.Crop
                             )
