@@ -5,4 +5,7 @@
     <string name="location">Location: %s</string>
     <string name="unknown">Unknown\n</string>
     <string name="add_photo">Add photo</string>
+    <string name="details_location">Location</string>
+    <string name="details_likes">Likes</string>
+    <string name="details_date">Date</string>
 </resources>

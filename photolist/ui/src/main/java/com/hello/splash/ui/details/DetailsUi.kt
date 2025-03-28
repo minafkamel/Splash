@@ -2,19 +2,20 @@ package com.hello.splash.ui.details
 
 import com.hello.splash.common.ui.mappers.DateFormatter
 import com.hello.splash.domain.details.GetDetailsUseCase.DetailsInfo
+import com.hello.splash.ui.R
 
 data class DetailsUi(
-    val location: String,
-    val likes: String,
     val description: String,
-    val date: String,
-    val imageUrl: String
+    val imageUrl: String,
+    val gridItems: List<Pair<Int, String>>
 )
 
 fun DetailsInfo.toUiModel(dateFormatter: DateFormatter) = DetailsUi(
-    location = this.locationName,
-    likes = this.likes,
     description = this.description,
-    date = dateFormatter.format(this.creationDate),
-    imageUrl = this.url
+    imageUrl = this.url,
+    gridItems = listOf(
+        Pair(R.string.details_location, this.locationName),
+        Pair(R.string.details_likes, this.likes),
+        Pair(R.string.details_date, dateFormatter.format(this.creationDate))
+    )
 )

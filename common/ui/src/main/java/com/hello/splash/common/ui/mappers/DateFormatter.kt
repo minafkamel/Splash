@@ -17,7 +17,7 @@ class DateFormatter @Inject constructor() {
 
     private val outputFormat: ThreadLocal<SimpleDateFormat> = object : ThreadLocal<SimpleDateFormat>() {
         override fun initialValue(): SimpleDateFormat {
-            return SimpleDateFormat("dd/MM/yy, hh:mm a", Locale.getDefault()).apply {
+            return SimpleDateFormat("dd.MM.yy", Locale.getDefault()).apply {
                 timeZone = TimeZone.getDefault()
             }
         }
