@@ -9,7 +9,6 @@ Welcome to the Splash App. The project aims to demonstrate my Android Engineerin
 
 ## Table of Contents
 - [Splash App](#splash-assignment-app)
-    - [Demo](#demo)
     - [To try the app](#to-try-the-app)
 	    - [Adding Photos](#adding-photos)
 	    - [Display of Photos](#display-of-photos)
@@ -43,9 +42,10 @@ Welcome to the Splash App. The project aims to demonstrate my Android Engineerin
 			  -  [Presentation](#ui)
 			  -  [Domain](#domain)
 			  - [Data](#data)
-# Demo
-<p align="center">
-<img src="https://github.com/minafkamel/Splash/blob/main/demo.gif" alt="Demo" width="420" height="840">
+         - [Functionality 4: Delete](#functionality-4-delete)
+             -  [Presentation](#ui)
+             -  [Domain](#domain)
+              - [Data](#data)
 
 # To try the app
 - Switch to `feature` branch and pull latest
@@ -143,6 +143,8 @@ The same applies for showing progress.
 ## Functionality 1: Add Photo
 
 When the app is launched, a "Add Photo" floating button is shown. When clicked, a random photo is retrieved and is displayed. Additionally, the photo is stored. If there are photos that already stored, they will be displayed in the grid
+<p align="center">
+<img src="https://github.com/minafkamel/Splash/blob/main/addphoto.gif" alt="Demo" width="400" height="840">
 
 ### Presentation
 
@@ -171,6 +173,9 @@ D[repository.getRandomPhoto] --> F[localDataSource.add]
 
 When the app launches, the photos grid is loaded with the photos that have been saved. If there's nothing saved, the grid is shown empty until the user adds a photo.
 
+<p align="center">
+<img src="https://github.com/minafkamel/Splash/blob/main/displayphoto.gif" alt="Demo" width="400" height="840">
+
 ### Presentation
 
 In `Photos`, there's a `LazyVerticalGrid` that displays the photos in two columns. When the `PhotosViewModel` is initialised, the `getPhotosUseCase` collects the photos and sets `loadStoredUrlsUiState` accordingly. When set, the photos are shown in the `LazyVerticalGrid` which collects then via `photosViewModel.loadStoredUrlsUiState.collectAsState()`
@@ -189,12 +194,15 @@ A[localDataSource.getAllPhotos] --> B[repository.photosFlow] --> C[getPhotosUseC
 
 ## Functionality 3: Details
 
-Other details such as (location, description and the number of likes) are stored in the database. When the user clicks on a photo, a dialog is shown displaying them.
+Other details such as (location, description, date and the number of likes) are stored in the database. When the user clicks on a photo, a details screen is shown with the information
+
+<p align="center">
+<img src="https://github.com/minafkamel/Splash/blob/main/error.gif" alt="Demo" width="400" height="840">
 
 ### Presentation
-`Dialog` will show a `AlertDialog` with the details of the photo. It sits in `Photos`. When `AsyncImage` is clicked the `clickedId` which is a `remember` is set. It is passed to the `Dialog` which recomposes based on the value i.e `if(clickedId.value.isNotEmpty())`
+`DetailsScreen` show the details after passing the photoId via assisted injection to `DetailsViewModel`
 
-If this is the case, the `clickedId` is passed to the `DetailsViewModel` via assisted injection. When initialised, it invokes `getDetailsUseCase` which 
+If this is the case, the `clickedId` is passed to the `DetailsViewModel` via assisted injection. When initialised, it invokes `getDetailsUseCase` which
 
 ### Domain
 The `GetDetailsUseCase` gets the details of the photo given an `id`. It calls `repository.getPhotoById(id)`. The needed info are wrapped in `DetailsInfo` then wrapped in `Resource.Success` if successful. It does some check on the nullability of the fields and defaults to an empty string.
@@ -204,7 +212,28 @@ In the `Repository`, the method `getPhotoById` calls `localDataSource.getPhotoBy
 
 ```mermaid 
 graph LR
-A[Photo Clicked] --> B[Dialog] --> C[getDetailsUseCase] --> D[repository.getPhotoById] 
+A[Photo Clicked] --> B[DetailsScreen] --> C[getDetailsUseCase] --> D[repository.getPhotoById] 
 --> E[localDataSource.getPhotoById]
 
 ```
+
+## Functionality 4: Delete
+
+When a photo is clicked for along, a dialog will show to ask the user if they want to delete the clicked photo. When user presses "Yes", the photo will be deleted. The grid will be updated.
+
+<p align="center">
+<img src="https://github.com/minafkamel/Splash/blob/main/delete.gif" alt="Demo" width="400" height="840">
+
+### Presentation
+`DeleteDialog` passed the photo Id to the `DeleteViewModel` via `yesDeletePhotoClicked`.
+
+### Domain
+The `DeletePhotoUseCase`  calls `repository.deletePhotoBy(id)`. 
+
+### Data
+In the `Repository`, the method `getPhotoById` calls `localDataSource.getPhotoById(id)` which queries the database and gets the info.
+
+```mermaid 
+graph LR
+A[Long Click on Photo] --> B[DeleteDialog] --> C[DeletePhotoUseCase] --> D[repository.deletePhotoBy] 
+--> E[localDataSource.deletePhotoBy]
