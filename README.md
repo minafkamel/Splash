@@ -144,7 +144,7 @@ The same applies for showing progress.
 
 When the app is launched, a "Add Photo" floating button is shown. When clicked, a random photo is retrieved and is displayed. Additionally, the photo is stored. If there are photos that already stored, they will be displayed in the grid
 <p align="center">
-<img src="https://github.com/minafkamel/Splash/blob/main/addphoto.gif" alt="Demo" width="400" height="840">
+<img src="https://github.com/minafkamel/Splash/blob/main/addphoto.gif" alt="Add Photo" width="400" height="840">
 
 ### Presentation
 
@@ -174,7 +174,7 @@ D[repository.getRandomPhoto] --> F[localDataSource.add]
 When the app launches, the photos grid is loaded with the photos that have been saved. If there's nothing saved, the grid is shown empty until the user adds a photo.
 
 <p align="center">
-<img src="https://github.com/minafkamel/Splash/blob/main/displayphoto.gif" alt="Demo" width="400" height="840">
+<img src="https://github.com/minafkamel/Splash/blob/main/displayphotos.gif" alt="Display Photos" width="400" height="840">
 
 ### Presentation
 
@@ -197,7 +197,7 @@ A[localDataSource.getAllPhotos] --> B[repository.photosFlow] --> C[getPhotosUseC
 Other details such as (location, description, date and the number of likes) are stored in the database. When the user clicks on a photo, a details screen is shown with the information
 
 <p align="center">
-<img src="https://github.com/minafkamel/Splash/blob/main/error.gif" alt="Demo" width="400" height="840">
+<img src="https://github.com/minafkamel/Splash/blob/main/error.gif" alt="Error" width="400" height="840">
 
 ### Presentation
 `DetailsScreen` show the details after passing the photoId via assisted injection to `DetailsViewModel`
@@ -222,7 +222,7 @@ A[Photo Clicked] --> B[DetailsScreen] --> C[getDetailsUseCase] --> D[repository.
 When a photo is clicked for along, a dialog will show to ask the user if they want to delete the clicked photo. When user presses "Yes", the photo will be deleted. The grid will be updated.
 
 <p align="center">
-<img src="https://github.com/minafkamel/Splash/blob/main/delete.gif" alt="Demo" width="400" height="840">
+<img src="https://github.com/minafkamel/Splash/blob/main/delete.gif" alt="Delete" width="400" height="840">
 
 ### Presentation
 `DeleteDialog` passed the photo Id to the `DeleteViewModel` via `yesDeletePhotoClicked`.
