@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.hello.splash.domain.photos.AddRandomPhotoUseCase
 import com.hello.splash.domain.photos.GetPhotosUseCase
 import com.hello.splash.common.domain.Resource
+import com.hello.splash.domain.delete.DeletePhotoUseCase
 import com.hello.splash.ui.UiState
 import com.hello.splash.ui.photos.grid.PhotoUi
 import com.hello.splash.ui.photos.grid.toUiModel

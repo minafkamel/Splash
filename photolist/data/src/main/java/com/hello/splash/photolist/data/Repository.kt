@@ -22,6 +22,8 @@ class Repository @Inject constructor(
 
     fun getPhotoById(id: String) = localDataSource.getPhotoById(id)
 
+    suspend fun deletePhotoBy(id: String) = localDataSource.deletePhotoById(id)
+
     val photosFlow = localDataSource.getAllPhotos()
 }
 

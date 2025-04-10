@@ -16,4 +16,7 @@ interface LocalDataSource {
 
     @Query("SELECT * FROM photos WHERE id =:id")
     fun getPhotoById(id: String): Flow<Photo>
+
+    @Query("DELETE FROM photos WHERE id = :id")
+    suspend fun deletePhotoById(id: String)
 }

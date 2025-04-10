@@ -8,4 +8,6 @@
     <string name="details_location">Location</string>
     <string name="details_likes">Likes</string>
     <string name="details_date">Date</string>
+    <string name="delete_are_you_sure">Are you sure you want to delete this photo?</string>
+    <string name="delete_yes">Yes</string>
 </resources>
