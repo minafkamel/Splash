@@ -13,6 +13,7 @@ Welcome to the Splash App. The project aims to demonstrate my Android Engineerin
 	    - [Adding Photos](#adding-photos)
 	    - [Display of Photos](#display-of-photos)
 	    - [Details](#details)
+        - [Delete](#delete)
 	    - [Error State](#error-state)
     - [Architecture](#architecture)
     - [Decisions and tradeoffs](#decisions-and-tradeoffs)
@@ -61,7 +62,13 @@ Welcome to the Splash App. The project aims to demonstrate my Android Engineerin
 
 ### Details
 - Press on a photo
-- Notice the dialog with description, location and number of likes of the photo
+- A new screen with details of the photo opens
+
+### Delete
+- Long press on a photo
+- A dialog will show to confirm deletion
+- Press Yes
+- Notice the photo is gone from the grid
 
 ### Error state
 - Turn on the Airplane mode
